@@ -11,7 +11,7 @@ const agents = [
             </svg>
         ),
         gradient: "from-blue-500 to-cyan-500",
-        href: null,
+        href: "/agents/ai-hop-dong",
     },
     {
         title: "AI Chi Phí",
@@ -22,7 +22,7 @@ const agents = [
             </svg>
         ),
         gradient: "from-green-500 to-emerald-500",
-        href: null,
+        href: "/agents/ai-chi-phi",
     },
     {
         title: "AI Mẫu Nhà",
@@ -33,7 +33,7 @@ const agents = [
             </svg>
         ),
         gradient: "from-purple-500 to-pink-500",
-        href: null,
+        href: "/agents/ai-mau-nha",
     },
     {
         title: "AI Thiết Kế",
@@ -55,7 +55,7 @@ const agents = [
             </svg>
         ),
         gradient: "from-amber-500 to-orange-500",
-        href: null,
+        href: "/agents/ai-phong-thuy",
     },
     {
         title: "AI Vật Liệu",
@@ -66,7 +66,40 @@ const agents = [
             </svg>
         ),
         gradient: "from-teal-500 to-cyan-500",
-        href: null,
+        href: "/agents/ai-vat-lieu",
+    },
+    {
+        title: "Thước Lỗ Ban",
+        description: "Công cụ đo lường phong thuỷ theo thước Lỗ Ban, giúp chọn kích thước chuẩn phong thuỷ.",
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+            </svg>
+        ),
+        gradient: "from-indigo-500 to-purple-500",
+        href: "/agents/thuoc-lo-ban",
+    },
+    {
+        title: "Đơn Giá M2",
+        description: "Tra cứu đơn giá xây dựng theo m2, cập nhật mới nhất cho từng hạng mục công trình.",
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+        ),
+        gradient: "from-emerald-500 to-teal-500",
+        href: "/agents/don-gia-m2",
+    },
+    {
+        title: "Chọn Ngày Đẹp",
+        description: "Tư vấn chọn ngày giờ tốt để khởi công, động thổ theo phong thuỷ và âm lịch.",
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+        ),
+        gradient: "from-yellow-500 to-orange-500",
+        href: "/agents/chon-ngay-dep",
     },
 ];
 

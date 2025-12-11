@@ -29,7 +29,7 @@ export default function AIThietKePage() {
             <main className="flex-1 w-full">
                 <iframe
                     src="https://app.hoangaixaydung.academy/"
-                    className="w-full h-full border-0"
+                    className="w-full h-screen border-0"
                     title="AI Thiết Kế - Hoang AI Xây Dựng"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
