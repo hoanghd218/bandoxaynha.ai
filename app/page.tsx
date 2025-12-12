@@ -1,39 +1,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <div className="flex flex-col h-screen max-h-screen bg-brand-gray-light text-brand-gray-neutral">
       {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4 bg-white border-b border-accent-border shadow-sm">
-        <div className="flex items-center gap-3">
-          {/* Logo */}
-          <div className="relative w-8 h-8">
-            <Image
-              src="/logo.png"
-              alt="Bản Đồ Xây Nhà AI"
-              fill
-              className="object-contain"
-            />
-          </div>
-          <h1 className="text-xl font-bold text-brand-blue tracking-tight">Bandoxaynha.ai</h1>
-        </div>
-        <div className="flex items-center gap-4">
-          <Link
-            href="/agents"
-            className="px-4 py-2 text-sm font-semibold text-brand-blue hover:text-primary transition-colors flex items-center gap-2"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-            </svg>
-            Tiện ích AI
-          </Link>
-          <button className="px-4 py-2 text-sm font-semibold text-primary border border-primary rounded-lg hover:bg-green-50 transition-colors">
-            Đăng nhập
-          </button>
-        </div>
-      </header>
+      <Header />
 
       {/* Main Content Area */}
       <main className=" flex-1 flex flex-col justify-center w-full max-w-5xl mx-auto p-4 items-center">

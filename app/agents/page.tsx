@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Header from "@/components/Header";
 
 const agents = [
     {
@@ -107,22 +108,8 @@ export default function AgentsPage() {
     return (
         <div className="min-h-screen flex flex-col bg-brand-gray-light">
             {/* Header */}
-            <header className="flex items-center justify-between px-6 py-4 bg-white border-b border-accent-border shadow-sm sticky top-0 z-10">
-                <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                    <div className="relative w-8 h-8">
-                        <Image
-                            src="/logo.png"
-                            alt="Bản Đồ Xây Nhà AI"
-                            fill
-                            className="object-contain"
-                        />
-                    </div>
-                    <h1 className="text-xl font-bold text-brand-blue tracking-tight">Bandoxaynha.ai</h1>
-                </Link>
-                <button className="px-4 py-2 text-sm font-semibold text-primary border border-primary rounded-lg hover:bg-green-50 transition-colors">
-                    Đăng nhập
-                </button>
-            </header>
+            {/* Header */}
+            <Header />
 
             {/* Main Content */}
             <main className="flex-1 w-full max-w-6xl mx-auto p-4 md:p-8">
