@@ -11,8 +11,22 @@
   --color-brand-gray-neutral: #6B6B6B;
   --color-accent-neon: #6AFF65;
   --color-accent-border: #DDE2E7;
-  
+
   --background-image-gradient-main: linear-gradient(to right, #1FA54A, #33D97A);
+
+  @keyframes bounce-subtle {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+
+  --animation-bounce-subtle: bounce-subtle 2s infinite ease-in-out;
 }
 
 :root {
