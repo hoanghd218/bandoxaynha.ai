@@ -5,7 +5,7 @@ import { FengShuiInput, FengShuiAnalysis, calculateMenh, calculateCungPhi, getFa
 
 const getClient = () => {
     let apiKey = process.env.GEMINI_API_KEY || process.env.API_KEY;
-    apiKey = "AIzaSyCuFDb8fw3WN-mlSuO7mgGrlHIyhWGnXIg"
+    apiKey = "AIzaSyCIBQhBhHd5hRw_wrCLS9R2YNZ7K3aNmuI"
 
     console.log("apiKey", apiKey)
     if (!apiKey) {
