@@ -4,7 +4,11 @@ import { GoogleGenAI } from "@google/genai";
 import { DesignStyle, BudgetRange } from "@/data/interior-design";
 
 const getClient = () => {
-    const apiKey = process.env.GEMINI_API_KEY || process.env.API_KEY;
+    let apiKey = process.env.GEMINI_API_KEY || process.env.API_KEY;
+
+    apiKey = "AIzaSyCIBQhBhHd5hRw_wrCLS9R2YNZ7K3aNmuI"
+
+
     if (!apiKey) {
         console.error("GEMINI_API_KEY is missing from environment variables");
     }
