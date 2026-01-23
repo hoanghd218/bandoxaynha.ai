@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Link from "next/link";
 import Image from "next/image";
-import { contractors, Contractor } from "@/data/contractors";
+import { contractors } from "@/data/contractors";
 import { notFound } from "next/navigation";
 
 // In Next.js 15, params is a Promise. 
@@ -178,7 +178,7 @@ export default async function ContractorDetailPage({ params }: PageProps) {
                                                     </svg>
                                                 ))}
                                             </div>
-                                            <p className="text-gray-600 text-sm">"{review.comment}"</p>
+                                            <p className="text-gray-600 text-sm">&quot;{review.comment}&quot;</p>
                                         </div>
                                     ))}
                                 </div>

@@ -38,18 +38,18 @@ export default function ContractorModal({ contractor, onClose }: ContractorModal
 
     return (
         <div
-            className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
             onClick={onClose}
         >
             <div
-                className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto"
+                className="bg-white rounded-2xl shadow-2xl border border-slate-200 max-w-3xl w-full max-h-[90vh] overflow-y-auto animate-scale-in"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Header */}
-                <div className="sticky top-0 bg-white border-b border-gray-200 p-6 rounded-t-2xl z-10">
+                <div className="sticky top-0 bg-white/95 backdrop-blur-md border-b border-slate-200 p-6 rounded-t-2xl z-10">
                     <div className="flex items-start justify-between">
                         <div className="flex items-center gap-4">
-                            <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-gray-200">
+                            <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-slate-200 shadow-lg">
                                 <Image
                                     src={contractor.avatar}
                                     alt={contractor.name}
@@ -58,8 +58,8 @@ export default function ContractorModal({ contractor, onClose }: ContractorModal
                                 />
                             </div>
                             <div>
-                                <h2 className="text-2xl font-bold text-gray-800">{contractor.name}</h2>
-                                <div className="flex items-center text-gray-500 mt-1">
+                                <h2 className="text-2xl font-bold text-slate-900 font-display">{contractor.name}</h2>
+                                <div className="flex items-center text-slate-500 mt-1">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         className="h-5 w-5 mr-1"
@@ -86,9 +86,9 @@ export default function ContractorModal({ contractor, onClose }: ContractorModal
                         </div>
                         <button
                             onClick={onClose}
-                            className="text-gray-400 hover:text-gray-600 transition-colors"
+                            className="text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-full p-2 transition-all duration-200 cursor-pointer hover:rotate-90"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
@@ -97,11 +97,11 @@ export default function ContractorModal({ contractor, onClose }: ContractorModal
                     {/* Rating */}
                     <div className="flex items-center mt-4">
                         <div className="flex items-center text-yellow-500 font-semibold">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1 fill-current" viewBox="0 0 20 20">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1 fill-current drop-shadow-sm" viewBox="0 0 20 20">
                                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                             </svg>
-                            {contractor.rating}
-                            <span className="text-gray-400 font-normal ml-1">({contractor.reviews.length} đánh giá)</span>
+                            <span className="text-slate-900 text-lg ml-2">{contractor.rating}</span>
+                            <span className="text-slate-400 font-normal ml-1 text-sm">({contractor.reviews.length} đánh giá)</span>
                         </div>
                     </div>
                 </div>
@@ -110,25 +110,25 @@ export default function ContractorModal({ contractor, onClose }: ContractorModal
                 <div className="p-6 space-y-6">
                     {/* Description */}
                     <div>
-                        <h3 className="text-lg font-semibold text-gray-800 mb-2">Giới thiệu</h3>
-                        <p className="text-gray-600">{contractor.description}</p>
+                        <h3 className="text-lg font-semibold text-slate-800 mb-2">Giới thiệu</h3>
+                        <p className="text-slate-600">{contractor.description}</p>
                     </div>
 
                     {/* Details Grid */}
                     <div className="grid grid-cols-2 gap-4">
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                            <div className="text-sm text-gray-500 mb-1">Kinh nghiệm</div>
-                            <div className="text-xl font-bold text-gray-800">{contractor.experienceYears} năm</div>
+                        <div className="bg-slate-50 p-4 rounded-lg">
+                            <div className="text-sm text-slate-500 mb-1">Kinh nghiệm</div>
+                            <div className="text-xl font-bold text-slate-800">{contractor.experienceYears} năm</div>
                         </div>
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                            <div className="text-sm text-gray-500 mb-1">Quy mô</div>
-                            <div className="text-xl font-bold text-gray-800">{contractor.companySize} nhân sự</div>
+                        <div className="bg-slate-50 p-4 rounded-lg">
+                            <div className="text-sm text-slate-500 mb-1">Quy mô</div>
+                            <div className="text-xl font-bold text-slate-800">{contractor.companySize} nhân sự</div>
                         </div>
                     </div>
 
                     {/* Services */}
                     <div>
-                        <h3 className="text-lg font-semibold text-gray-800 mb-2">Dịch vụ</h3>
+                        <h3 className="text-lg font-semibold text-slate-800 mb-2">Dịch vụ</h3>
                         <div className="flex flex-wrap gap-2">
                             {contractor.services.map((service, idx) => (
                                 <span
@@ -143,28 +143,28 @@ export default function ContractorModal({ contractor, onClose }: ContractorModal
 
                     {/* Contact Info */}
                     <div>
-                        <h3 className="text-lg font-semibold text-gray-800 mb-3">Thông tin liên hệ</h3>
+                        <h3 className="text-lg font-semibold text-slate-800 mb-3">Thông tin liên hệ</h3>
                         <div className="space-y-2">
-                            <div className="flex items-center text-gray-600">
+                            <div className="flex items-center text-slate-600">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 011.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                 </svg>
                                 <a href={`tel:${contractor.phone}`} className="hover:text-brand-blue">
                                     {contractor.phone}
                                 </a>
                             </div>
-                            <div className="flex items-center text-gray-600">
+                            <div className="flex items-center text-slate-600">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 012.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
                                 <a href={`mailto:${contractor.email}`} className="hover:text-brand-blue">
                                     {contractor.email}
                                 </a>
                             </div>
                             {contractor.website && (
-                                <div className="flex items-center text-gray-600">
+                                <div className="flex items-center text-slate-600">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9 9a9 9 0 01-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9m0 18c-1.657 0-3-4.03-3-9m-9 9a9 9 0 01-9-9m9 9c1.657 0-3-4.03-3-9" />
                                     </svg>
                                     <a href={contractor.website} target="_blank" rel="noopener noreferrer" className="hover:text-brand-blue">
                                         {contractor.website}
@@ -177,10 +177,10 @@ export default function ContractorModal({ contractor, onClose }: ContractorModal
                     {/* Projects */}
                     {contractor.projects && contractor.projects.length > 0 && (
                         <div>
-                            <h3 className="text-lg font-semibold text-gray-800 mb-3">Dự án tiêu biểu</h3>
+                            <h3 className="text-lg font-semibold text-slate-800 mb-3">Dự án tiêu biểu</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {contractor.projects.map((project) => (
-                                    <div key={project.id} className="border border-gray-200 rounded-lg overflow-hidden">
+                                    <div key={project.id} className="border border-slate-200 rounded-lg overflow-hidden">
                                         <div className="relative h-40">
                                             <Image
                                                 src={project.imageUrl}
@@ -190,8 +190,8 @@ export default function ContractorModal({ contractor, onClose }: ContractorModal
                                             />
                                         </div>
                                         <div className="p-3">
-                                            <h4 className="font-semibold text-gray-800">{project.name}</h4>
-                                            <p className="text-sm text-gray-500 mt-1">{project.description}</p>
+                                            <h4 className="font-semibold text-slate-800">{project.name}</h4>
+                                            <p className="text-sm text-slate-500 mt-1">{project.description}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -202,7 +202,7 @@ export default function ContractorModal({ contractor, onClose }: ContractorModal
                     {/* Reviews Section */}
                     <div>
                         <div className="flex items-center justify-between mb-3">
-                            <h3 className="text-lg font-semibold text-gray-800">Đánh giá từ khách hàng</h3>
+                            <h3 className="text-lg font-semibold text-slate-800">Đánh giá từ khách hàng</h3>
                             <button
                                 onClick={() => setShowReviewForm(!showReviewForm)}
                                 className="text-sm font-semibold text-brand-blue hover:underline"
@@ -223,91 +223,85 @@ export default function ContractorModal({ contractor, onClose }: ContractorModal
 
                         {/* Review Form */}
                         {showReviewForm && (
-                            <form onSubmit={handleSubmitReview} className="mb-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
-                                <div className="space-y-4">
-                                    {/* Star Rating */}
-                                    <div>
-                                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                            Đánh giá của bạn
-                                        </label>
-                                        <div className="flex gap-2">
-                                            {[1, 2, 3, 4, 5].map((star) => (
-                                                <button
-                                                    key={star}
-                                                    type="button"
-                                                    onClick={() => setRating(star)}
-                                                    onMouseEnter={() => setHoveredRating(star)}
-                                                    onMouseLeave={() => setHoveredRating(0)}
-                                                    className="transition-transform hover:scale-110"
-                                                >
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        className={`h-8 w-8 ${star <= (hoveredRating || rating)
-                                                                ? 'text-yellow-500 fill-current'
-                                                                : 'text-gray-300'
-                                                            }`}
-                                                        viewBox="0 0 20 20"
-                                                        fill={star <= (hoveredRating || rating) ? "currentColor" : "none"}
-                                                        stroke="currentColor"
-                                                    >
-                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                                    </svg>
-                                                </button>
-                                            ))}
-                                            <span className="ml-2 text-sm text-gray-600 self-center">
-                                                {rating} sao
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    {/* Author Name */}
-                                    <div>
-                                        <label htmlFor="author" className="block text-sm font-semibold text-gray-700 mb-2">
-                                            Tên của bạn
-                                        </label>
-                                        <input
-                                            type="text"
-                                            id="author"
-                                            value={author}
-                                            onChange={(e) => setAuthor(e.target.value)}
-                                            required
-                                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue"
-                                            placeholder="Nhập tên của bạn"
-                                        />
-                                    </div>
-
-                                    {/* Comment */}
-                                    <div>
-                                        <label htmlFor="comment" className="block text-sm font-semibold text-gray-700 mb-2">
-                                            Nhận xét
-                                        </label>
-                                        <textarea
-                                            id="comment"
-                                            value={comment}
-                                            onChange={(e) => setComment(e.target.value)}
-                                            required
-                                            rows={4}
-                                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue resize-none"
-                                            placeholder="Chia sẻ trải nghiệm của bạn với nhà thầu này..."
-                                        />
-                                    </div>
-
-                                    {/* Submit Button */}
-                                    <div className="flex gap-3">
+                            <form onSubmit={handleSubmitReview} className="mb-6 p-6 bg-slate-50 rounded-xl border border-slate-200">
+                                {/* Star rating input */}
+                                <div className="flex gap-1 mb-4">
+                                    {[1, 2, 3, 4, 5].map((star) => (
                                         <button
-                                            type="submit"
-                                            className="flex-1 bg-brand-blue text-white py-2 px-4 rounded-lg font-semibold hover:bg-brand-blue/90 transition-colors"
-                                        >
-                                            Gửi đánh giá
-                                        </button>
-                                        <button
+                                            key={star}
                                             type="button"
-                                            onClick={() => setShowReviewForm(false)}
-                                            className="px-4 py-2 border border-gray-300 rounded-lg font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
+                                            onClick={() => setRating(star)}
+                                            onMouseEnter={() => setHoveredRating(star)}
+                                            onMouseLeave={() => setHoveredRating(0)}
+                                            className="transition-transform hover:scale-125 cursor-pointer"
                                         >
-                                            Hủy
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className={`h-8 w-8 
+                                                    ${star <= (hoveredRating || rating)
+                                                            ? 'text-yellow-500 fill-current'
+                                                            : 'text-slate-300 fill-none'
+                                                        }`}
+                                                viewBox="0 0 20 20"
+                                                stroke={star <= (hoveredRating || rating) ? "currentColor" : "none"}
+                                                strokeWidth="2"
+                                            >
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                            </svg>
                                         </button>
-                                    </div>
+                                    ))}
+                                    <span className="ml-2 text-sm text-slate-600 self-center">
+                                        {rating} sao
+                                    </span>
+                                </div>
+
+                                {/* Author Name */}
+                                <div>
+                                    <label htmlFor="author" className="block text-sm font-semibold text-slate-900 mb-2">
+                                        Tên của bạn
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="author"
+                                        value={author}
+                                        onChange={(e) => setAuthor(e.target.value)}
+                                        required
+                                        className="w-full px-4 py-3 rounded-xl border-2 border-slate-300 hover:border-primary/50 focus:ring-4 focus:ring-primary/10 focus:border-primary focus:outline-none transition-all duration-200 bg-white cursor-pointer"
+                                        placeholder="Nhập tên của bạn"
+                                    />
+                                </div>
+
+                                {/* Comment */}
+                                <div>
+                                    <label htmlFor="comment" className="block text-sm font-semibold text-slate-900 mb-2">
+                                        Nhận xét
+                                    </label>
+                                    <textarea
+                                        id="comment"
+                                        value={comment}
+                                        onChange={(e) => setComment(e.target.value)}
+                                        required
+                                        rows={4}
+                                        className="w-full px-4 py-3 rounded-xl border-2 border-slate-300 hover:border-primary/50 focus:ring-4 focus:ring-primary/10 focus:border-primary focus:outline-none transition-all duration-200 bg-white resize-none cursor-pointer"
+                                        placeholder="Chia sẻ trải nghiệm của bạn với nhà thầu này..."
+                                    />
+                                </div>
+
+                                {/* Submit Button */}
+                                <div className="flex gap-3">
+                                    <button
+                                        type="submit"
+                                        className="flex-1 bg-brand-blue text-white py-3 px-6 rounded-lg font-semibold hover:bg-brand-blue/90 transition-colors"
+                                    >
+                                        Gửi đánh giá
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => setShowReviewForm(false)}
+                                        className="px-6 py-3 border border-slate-300 rounded-lg font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
+                                    >
+                                        Hủy
+                                    </button>
                                 </div>
                             </form>
                         )}
@@ -316,9 +310,9 @@ export default function ContractorModal({ contractor, onClose }: ContractorModal
                         {contractor.reviews && contractor.reviews.length > 0 && (
                             <div className="space-y-4">
                                 {contractor.reviews.map((review) => (
-                                    <div key={review.id} className="border border-gray-200 rounded-lg p-4">
+                                    <div key={review.id} className="border border-slate-200 rounded-lg p-4">
                                         <div className="flex items-center justify-between mb-2">
-                                            <div className="font-semibold text-gray-800">{review.author}</div>
+                                            <div className="font-semibold text-slate-800">{review.author}</div>
                                             <div className="flex items-center text-yellow-500 text-sm">
                                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 fill-current" viewBox="0 0 20 20">
                                                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -326,8 +320,8 @@ export default function ContractorModal({ contractor, onClose }: ContractorModal
                                                 {review.rating}
                                             </div>
                                         </div>
-                                        <p className="text-gray-600 text-sm">{review.comment}</p>
-                                        <div className="text-xs text-gray-400 mt-2">{new Date(review.date).toLocaleDateString('vi-VN')}</div>
+                                        <p className="text-slate-600 text-sm">{review.comment}</p>
+                                        <div className="text-xs text-slate-400 mt-2">{new Date(review.date).toLocaleDateString('vi-VN')}</div>
                                     </div>
                                 ))}
                             </div>
@@ -335,7 +329,7 @@ export default function ContractorModal({ contractor, onClose }: ContractorModal
 
                         {/* No reviews yet */}
                         {(!contractor.reviews || contractor.reviews.length === 0) && !showReviewForm && (
-                            <p className="text-gray-500 text-sm text-center py-4">
+                            <p className="text-slate-500 text-sm text-center py-4">
                                 Chưa có đánh giá nào. Hãy là người đầu tiên đánh giá!
                             </p>
                         )}
@@ -343,7 +337,7 @@ export default function ContractorModal({ contractor, onClose }: ContractorModal
                 </div>
 
                 {/* Footer */}
-                <div className="sticky bottom-0 bg-white border-t border-gray-200 p-6 rounded-b-2xl">
+                <div className="sticky bottom-0 bg-white border-t border-slate-200 p-6 rounded-b-2xl">
                     <div className="flex gap-3">
                         <a
                             href={`tel:${contractor.phone}`}
@@ -353,7 +347,7 @@ export default function ContractorModal({ contractor, onClose }: ContractorModal
                         </a>
                         <a
                             href={`mailto:${contractor.email}`}
-                            className="flex-1 bg-gray-100 text-gray-800 py-3 px-6 rounded-lg font-semibold hover:bg-gray-200 transition-colors text-center"
+                            className="flex-1 bg-slate-100 text-slate-800 py-3 px-6 rounded-lg font-semibold hover:bg-slate-200 transition-colors text-center"
                         >
                             Gửi email
                         </a>

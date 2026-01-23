@@ -58,8 +58,11 @@ export default function ContractorMap({ contractors, selectedContractorId }: Con
 
     if (!isLoaded) {
         return (
-            <div className="w-full h-full bg-gray-100 flex items-center justify-center animate-pulse">
-                <p className="text-gray-400">Loading Map...</p>
+            <div className="w-full h-full bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center animate-fadeIn">
+                <div className="text-center">
+                    <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                    <p className="text-slate-600 font-medium">Đang tải bản đồ...</p>
+                </div>
             </div>
         );
     }
@@ -134,17 +137,18 @@ export default function ContractorMap({ contractors, selectedContractorId }: Con
                         <div
                             style={{
                                 position: 'absolute',
-                                transform: 'translate(-50%, 28px)', // Position below marker
+                                transform: 'translate(-50%, 28px)',
                                 background: 'white',
-                                padding: '4px 8px',
-                                borderRadius: '4px',
+                                padding: '6px 12px',
+                                borderRadius: '8px',
                                 fontSize: '12px',
-                                fontWeight: '500',
-                                color: '#202124',
-                                boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                                fontWeight: '600',
+                                color: '#1E293B',
+                                boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
                                 whiteSpace: 'nowrap',
                                 cursor: 'pointer',
-                                border: '1px solid rgba(0,0,0,0.1)'
+                                border: '1px solid #E2E8F0',
+                                transition: 'all 0.2s'
                             }}
                             onClick={() => setSelectedContractor(contractor)}
                         >
@@ -159,9 +163,9 @@ export default function ContractorMap({ contractors, selectedContractorId }: Con
                     position={selectedContractor.coordinates}
                     onCloseClick={() => setSelectedContractor(null)}
                 >
-                    <div className="p-2 max-w-xs">
-                        <div className="flex items-center gap-2 mb-2">
-                            <div className="relative w-8 h-8 rounded-full overflow-hidden shrink-0">
+                    <div className="p-3 max-w-xs">
+                        <div className="flex items-center gap-3 mb-3">
+                            <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 border-2 border-slate-200 shadow-md">
                                 <Image
                                     src={selectedContractor.avatar}
                                     alt={selectedContractor.name}
@@ -169,12 +173,14 @@ export default function ContractorMap({ contractors, selectedContractorId }: Con
                                     className="object-cover"
                                 />
                             </div>
-                            <h3 className="font-bold text-sm text-gray-800 line-clamp-1">{selectedContractor.name}</h3>
+                            <div>
+                                <h3 className="font-bold text-sm text-slate-900">{selectedContractor.name}</h3>
+                                <p className="text-xs text-slate-500 mt-0.5">{selectedContractor.location}</p>
+                            </div>
                         </div>
-                        <p className="text-xs text-gray-500 mb-2">{selectedContractor.location}</p>
                         <Link
                             href={`/nha-thau/${selectedContractor.id}`}
-                            className="text-xs font-semibold text-brand-blue hover:underline block text-right"
+                            className="block text-center text-xs font-semibold text-white bg-brand-blue hover:bg-brand-blue/90 px-4 py-2 rounded-lg transition-all duration-200 cursor-pointer"
                         >
                             Xem chi tiết →
                         </Link>
